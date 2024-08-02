@@ -1,0 +1,309 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.drawerlayout.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    tools:context=".MainActivity"
+    tools:openDrawer="start">
+
+
+    <!--    for refreshing layout on swipe from top-->
+    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+        android:id="@+id/refreshLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <androidx.core.widget.NestedScrollView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_above="@id/buttonLayout">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <!-- RelativeLayout -->
+                    <RelativeLayout
+                        android:id="@+id/relativeLayout"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <!-- ImageView -->
+                        <ImageView
+                            android:id="@+id/imageViewBackgroundBanner"
+                            android:layout_width="match_parent"
+                            android:layout_height="200dp"
+                            android:scaleType="centerCrop" />
+
+                        <!-- View -->
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="200dp"
+                            android:background="@drawable/custom_background_banner" />
+
+                        <!-- RelativeLayout inside -->
+                        <RelativeLayout
+                            android:id="@+id/relativeBanner"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_alignBottom="@id/imageViewBackgroundBanner">
+
+                            <!-- ImageView inside RelativeLayout -->
+                            <ImageView
+                                android:id="@+id/imageViewBanner"
+                                android:layout_width="70dp"
+                                android:layout_height="70dp"
+                                android:layout_marginLeft="10dp"
+                                android:layout_marginRight="10dp"
+                                android:layout_marginBottom="10dp"
+                                android:padding="2dp" />
+
+                            <!-- TextView inside RelativeLayout -->
+                            <TextView
+                                android:id="@+id/tvTitleBannerBaiHat"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignTop="@id/imageViewBanner"
+                                android:layout_marginTop="5dp"
+                                android:layout_toEndOf="@id/imageViewBanner"
+                                android:text="Nguoi ay la ai"
+                                android:textColor="#ffffff"
+                                android:textSize="18sp"
+                                android:textStyle="bold" />
+
+                            <!-- RelativeLayout inside RelativeLayout -->
+                            <RelativeLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@id/tvTitleBannerBaiHat"
+                                android:layout_marginTop="6dp"
+                                android:layout_toEndOf="@id/imageViewBanner">
+
+                                <!-- TextView inside inner RelativeLayout -->
+                                <TextView
+                                    android:id="@+id/tvNoiDung"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginEnd="40dp"
+                                    android:maxLines="2"
+                                    android:text="Đây là 1 ca khúc của 1 ca sĩ nổi tiếng hot nhất hiện nay"
+                                    android:textColor="#ffffff"
+                                    android:textSize="13sp" />
+                            </RelativeLayout>
+                        </RelativeLayout>
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:id="@+id/topicLayout"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <RelativeLayout
+                            android:id="@+id/relativeChuDeTheLoai"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:padding="7dp">
+
+                            <TextView
+                                android:id="@+id/tvTitleChuDeVaTheLoai"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Chủ đề và thể loại"
+                                android:textSize="25sp"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:id="@+id/tvXemThemChuDeTheLoai"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentRight="true"
+                                android:text="xem thêm"
+                                android:textColor="@color/colorPrimary"
+                                android:textSize="20sp" />
+                        </RelativeLayout>
+
+                        <HorizontalScrollView
+                            android:id="@+id/horizontalScrollView"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/relativeChuDeTheLoai"
+                            android:scrollbars="none">
+
+                        </HorizontalScrollView>
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:id="@+id/albumLayout"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp">
+
+                        <RelativeLayout
+                            android:id="@+id/relativeAlbum"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="10dp"
+                            android:layout_marginRight="10dp">
+
+                            <TextView
+                                android:id="@+id/tvTitleAlbum"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Album Hot"
+                                android:textSize="25sp"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:id="@+id/tvXemThemAlbum"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentRight="true"
+                                android:text="xem thêm"
+                                android:textColor="@color/colorPrimary"
+                                android:textSize="20sp" />
+                        </RelativeLayout>
+
+                        <androidx.recyclerview.widget.RecyclerView
+                            android:id="@+id/recylerViewAlbumHot"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/relativeAlbum"
+                            android:layout_marginTop="10dp">
+
+                        </androidx.recyclerview.widget.RecyclerView>
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:id="@+id/relativeAllSongs"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="10dp">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Tất cả bài hát"
+                            android:textSize="25sp"
+                            android:textStyle="bold"/>
+                    </RelativeLayout>
+
+                    <!-- RecyclerView -->
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/musicRV"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:nestedScrollingEnabled="false"
+                        android:scrollbarThumbVertical="@drawable/scroll_bar_icon"
+                        android:scrollbars="vertical" />
+
+
+                    <!-- Total Songs Button -->
+                    <TextView
+                        android:id="@+id/totalSongs"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="10dp"
+                        android:text="@string/total_songs"
+                        android:textColor="?colorOnPrimary"
+                        android:visibility="gone"
+                        tools:ignore="TextContrastCheck" />
+
+                </LinearLayout>
+
+            </androidx.core.widget.NestedScrollView>
+
+
+            <!-- Fragment nowPlaying -->
+            <androidx.fragment.app.FragmentContainerView
+                android:id="@+id/nowPlaying"
+                android:name="com.harshRajpurohit.musicPlayer.NowPlaying"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_above="@+id/buttonLayout"
+                android:visibility="gone"
+                tools:layout="@layout/fragment_now_playing" />
+
+
+            <!-- Button LinearLayout -->
+            <LinearLayout
+                android:id="@+id/buttonLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:orientation="horizontal">
+
+                <!-- Buttons -->
+                <Button
+                    android:id="@+id/chatBtn"
+                    style="@style/Widget.AppCompat.Button.Borderless"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:contentDescription="@string/chat_btn"
+                    android:drawableTop="@drawable/ic_chat"
+                    android:text="@string/chat_btn"
+                    android:textAllCaps="false"
+                    android:textColor="?colorOnPrimary"
+                    tools:ignore="TextContrastCheck" />
+
+                <Button
+                    android:id="@+id/favouriteBtn"
+                    style="@style/Widget.AppCompat.Button.Borderless"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:contentDescription="@string/favourites_btn"
+                    android:drawableTop="@drawable/favourite_icon"
+                    android:text="@string/favourites_btn"
+                    android:textAllCaps="false"
+                    android:textColor="?colorOnPrimary"
+                    tools:ignore="TextContrastCheck" />
+
+                <Button
+                    android:id="@+id/playlistBtn"
+                    style="@style/Widget.AppCompat.Button.Borderless"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:contentDescription="@string/playlist_btn"
+                    android:drawableTop="@drawable/playlist_icon"
+                    android:text="@string/playlist_btn"
+                    android:textAllCaps="false"
+                    android:textColor="?colorOnPrimary"
+                    tools:ignore="TextContrastCheck" />
+
+                <Button
+                    android:id="@+id/playNextBtn"
+                    style="@style/Widget.AppCompat.Button.Borderless"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:contentDescription="@string/playlist_btn"
+                    android:drawableTop="@drawable/play_next_icon"
+                    android:text="@string/play_next"
+                    android:textAllCaps="false"
+                    android:textColor="?colorOnPrimary" />
+
+            </LinearLayout>
+
+
+        </RelativeLayout>
+    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+
+    <com.google.android.material.navigation.NavigationView
+        android:id="@+id/navView"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_gravity="start"
+        android:fitsSystemWindows="true"
+        app:headerLayout="@layout/nav_header"
+        app:menu="@menu/nav_menu" />
+
+</androidx.drawerlayout.widget.DrawerLayout>

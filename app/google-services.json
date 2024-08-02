@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "47163564989",
+    "project_id": "music-app-417212",
+    "storage_bucket": "music-app-417212.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:47163564989:android:54a90299ef776fb9a5a8d4",
+        "android_client_info": {
+          "package_name": "com.example.musicPlayer"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDfQxnZ2ZUwTUTdne5lzctMDxEh9bjXrnQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:47163564989:android:b9ccd4945fd63c73a5a8d4",
+        "android_client_info": {
+          "package_name": "com.harshRajpurohit.musicPlayer"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDfQxnZ2ZUwTUTdne5lzctMDxEh9bjXrnQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
