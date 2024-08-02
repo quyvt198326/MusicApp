@@ -144,15 +144,6 @@ class ChatActivity : AppCompatActivity() {
         val totalSongs = MainActivity.MusicListMA
         val recommendedSongs = mutableListOf<Music>()
         for (song in totalSongs) {
-            if (botReply.contains("buồn") && song.mood == "buồn") {
-                if (botReply.contains("trừ nhạc của Erik")) {
-                    if(song.artist != "Erik"){
-                        recommendedSongs.add(song)
-                    }
-                }else{
-                    recommendedSongs.add(song)
-                }
-            }
             if (botReply.contains("niềm vui") && song.mood == "vui") {
                 recommendedSongs.add(song)
             }
@@ -164,6 +155,11 @@ class ChatActivity : AppCompatActivity() {
             }
             if (botReply.contains("vui nhưng")){
                 if (botReply.contains("buồn") && song.mood == "buồn2"){
+                    recommendedSongs.add(song)
+                }
+            }
+            if (botReply.contains("buồn nhưng")){
+                if (botReply.contains("vui") && song.mood == "vui2"){
                     recommendedSongs.add(song)
                 }
             }
